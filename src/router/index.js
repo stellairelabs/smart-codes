@@ -1,29 +1,90 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "Home",
+    component: HomeView,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: "/about",
+    name: "About",
+    component: () => import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+  },
+  {
+    path: "/services",
+    name: "Services",
+    component: () => import(/* webpackChunkName: "about" */ "../views/ServicesView.vue"),
+  },
+  {
+    path: "/blog",
+    name: "Blog",
+    component: () => import(/* webpackChunkName: "about" */ "../views/BlogView.vue"),
+  },
+  {
+    path: "/request-a-quote",
+    name: "RequestAQuote",
+    component: () => import(/* webpackChunkName: "about" */ "../views/RequestAQuoteView.vue"),
+  },
+  {
+    path: "/smart-contract-audit",
+    name: "SmartContractAudit",
+    component: () => import(/* webpackChunkName: "about" */ "../views/SmartContractAuditView.vue"),
+  },
+  {
+    path: "/penetration-testing",
+    name: "PenetrationTesting",
+    component: () => import(/* webpackChunkName: "about" */ "../views/PenetrationTestingView.vue"),
+  },
+  {
+    path: "/vulnerability-scanning",
+    name: "VulnerabilityScanning",
+    component: () => import(/* webpackChunkName: "about" */ "../views/VulnerabilityScanningView.vue"),
+  },
+  {
+    path: "/smart-contract-functional-testing",
+    name: "SmartContractFunctionalTesting",
+    component: () => import(/* webpackChunkName: "about" */ "../views/SmartContractFunctionalTestingView.vue"),
+  },
+  {
+    path: "/smart-contract-development",
+    name: "SmartContractDevelopment",
+    component: () => import(/* webpackChunkName: "about" */ "../views/SmartContractDevelopmentView.vue"),
+  },
+  {
+    path: "/blockchain-development",
+    name: "BlockchainDevelopment",
+    component: () => import(/* webpackChunkName: "about" */ "../views/BlockchainDevelopmentView.vue"),
+  },
+  {
+    path: "/dapp-development",
+    name: "dAppDevelopment",
+    component: () => import(/* webpackChunkName: "about" */ "../views/dAppDevelopmentView.vue"),
+  },
+  {
+    path: "/blockchain-consulting",
+    name: "BlockchainConsulting",
+    component: () => import(/* webpackChunkName: "about" */ "../views/BlockchainConsultingView.vue"),
+  },
+  {
+    path: "/blockchain-consulting",
+    name: "BlockchainConsulting",
+    component: () => import(/* webpackChunkName: "about" */ "../views/BlockchainConsultingView.vue"),
+  },
+  {
+    path: "*",
+    redirect: "/",
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
