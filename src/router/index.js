@@ -71,11 +71,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ "../views/BlockchainConsultingView.vue"),
   },
   {
-    path: "/blockchain-consulting",
-    name: "BlockchainConsulting",
-    component: () => import(/* webpackChunkName: "about" */ "../views/BlockchainConsultingView.vue"),
-  },
-  {
     path: "*",
     redirect: "/",
   },
