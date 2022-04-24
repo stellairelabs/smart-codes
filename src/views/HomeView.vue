@@ -1,15 +1,22 @@
 <template>
-  <hello-world />
+  <v-container>
+    <!-- Jumbotron -->
+
+    <v-row> </v-row>
+    <!-- Benifits of smart contracts -->
+    <v-row> </v-row>
+    <OurServices />
+    <Feedback />
+  </v-container>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import OurServices from "../components/home/OurServices.vue";
+import Feedback from "../components/home/Feedback.vue";
+export default {
+  name: "Home",
 
-  export default {
-    name: 'Home',
-
-    components: {
-      HelloWorld,
-    },
-  }
+  components: { OurServices, Feedback },
+  data: () => ({}),
+};
 </script>
