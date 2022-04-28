@@ -16,7 +16,7 @@
         <v-row class="d-flex align-center align-self-start" v-for="(category, i) in services" :key="i">
           <h3 class="category">{{ category.category }}</h3>
           <div class="box" v-for="(service, j) in category.services" :key="j">
-            <h4>{{ service.title }}</h4>
+            <h4 id="title">{{ service.title }}</h4>
             <p>{{ service.text }}</p>
             <v-btn to="/request-a-quote" text outlined>Learn more</v-btn>
           </div>
@@ -50,22 +50,34 @@ export default {
     width: 120px;
   }
   .box {
-    width: 220px;
+    width: 260px;
     height: 260px;
     border: 1px solid black;
     padding: 20px;
-    margin: 20px;
+    margin: 20px 10px;
+    // margin-left: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    
 
     p {
       text-overflow: clip;
       word-wrap: break-word;
       overflow: hidden;
-      max-height: 6.5em; // 5 lines of text
+      max-height: 9.1em; // 5 lines of text
       line-height: 1.3em;
+    }
+
+    #title {
+      max-width: 250px;
+      background-color: white;
+      text-align: center;
+      position: absolute;
+      align-self: center;
+      word-wrap: break-word;
+      transform: translate(0, -135%);
     }
   }
 }
