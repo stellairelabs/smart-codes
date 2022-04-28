@@ -10,7 +10,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat null</p></v-img
         >
       </v-col>
-      <v-col> </v-col>
+      <v-col><FourTileContainer :data="fourTileContainer" /> </v-col>
     </v-row>
     <OurServices />
     <Feedback />
@@ -21,11 +21,14 @@
 import OurServices from "../components/home/OurServices.vue";
 import Feedback from "../components/home/Feedback.vue";
 import Jumbotron from "../components/home/Jumbotron.vue";
+import FourTileContainer from "../components/FourTileContainer.vue";
+
+import { fourTileContainer } from "../data/home";
 
 export default {
   name: "Home",
 
-  components: { OurServices, Feedback, Jumbotron },
-  data: () => ({}),
+  components: { OurServices, Feedback, Jumbotron, FourTileContainer },
+  data: () => ({ fourTileContainer }),
 };
 </script>
