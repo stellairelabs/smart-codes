@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import ServicesView from "../views/ServicesView.vue";
 
 Vue.use(VueRouter);
 
@@ -18,7 +19,7 @@ const routes = [
   {
     path: "/services",
     name: "Services",
-    component: () => import(/* webpackChunkName: "about" */ "../views/ServicesView.vue"),
+    component: ServicesView,
   },
   {
     path: "/blog",
