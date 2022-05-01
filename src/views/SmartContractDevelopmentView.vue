@@ -1,13 +1,19 @@
 <template>
   <v-container>
 
-    <!-- <HeaderTile title="Smart Contract Development" :description="dummyText" :image="dummyImage" />
+    <HeaderTile title="Smart Contract Development" :description="dummyText" :image="dummyImage" />
 
     <InformationTile title="What is Smart Contract Functional Test?" :description="dummyText" :image="dummyImage" :leftAligned="false" />
 
-    <ProcessFlow title="Our Smart Contract Development Process" :processFlow="process_flow" /> -->
+    <ProcessFlow title="Our Smart Contract Development Process" :processFlow="process_flow" />
 
-    <BenefitsTile title="Benefits of a Smart Contract Development Process" :description="dummyText" :image="dummyImage" :leftAligned="false" />
+    <BenefitsTile 
+      title="Benefits of a Smart Contract Development Process" 
+      :description="dummyText" 
+      :image="dummyImage" 
+      :leftAligned="false"
+      :data="[dummyTextShort, dummyTextShort, dummyTextShort, dummyTextShort]"
+    />
 
   </v-container>
 </template>
@@ -29,6 +35,7 @@ export default {
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad\
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut\
           aliquip ex ea commodo consequat.",
+    dummyTextShort: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
     process_flow: [
       { name: "Share Source Code", image: dummyImage },
       { name: "Receive Quote", image: dummyImage },
