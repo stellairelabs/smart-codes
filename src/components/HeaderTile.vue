@@ -2,12 +2,7 @@
     <v-row align="center" class="mb-15" justify="space-between">
       <v-col cols="5">
         <h1>{{ title }}</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+        <p>{{ description }}</p>
         <v-btn to="/request-a-quote" text outlined>Request A Quote</v-btn>
       </v-col>
       <v-col cols="6">
