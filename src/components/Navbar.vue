@@ -33,17 +33,12 @@
 </template>
 
 <script>
-import logo from "../assets/logo.png";
+import { logo, menuItems } from "../data/navAndFooter";
 export default {
   name: "Navbar",
   data: () => ({
     logo,
-    menuItems: [
-      { title: "Home", path: "/" },
-      { title: "Services", path: "/services" },
-      { title: "About", path: "/about" },
-      { title: "Blog", path: "/blog" },
-    ],
+    menuItems,
     drawer: false,
     group: null,
   }),
