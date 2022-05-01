@@ -7,24 +7,25 @@ export const logo = require("../assets/logo.png"),
   ],
   socialmedia = [
     {
-      social: "Facebook",
-      icon: "",
-      link: "",
+      social: "LinkedIn",
+      icon: "linkedin",
+      link: "https://www.linkedin.com/",
     },
     {
       social: "Facebook",
-      icon: "",
+      icon: "facebook",
+      link: "https://www.facebook.com/",
+    },
+    {
+      social: "Instagram",
+      icon: "instagram",
       link: "",
     },
     {
-      social: "Facebook",
-      icon: "",
-      link: "",
-    },
-    {
-      social: "Facebook",
-      icon: "",
+      social: "YouTube",
+      icon: "youtube",
       link: "",
     },
   ],
-  footerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis";
+  footerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis",
+  footerRequestAQuote = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nis";
