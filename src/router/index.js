@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ServicesView from "../views/ServicesView.vue";
+import PenetrationTestingView from "../views/PenetrationTestingView.vue";
 
 Vue.use(VueRouter);
 
@@ -39,7 +40,7 @@ const routes = [
   {
     path: "/penetration-testing",
     name: "PenetrationTesting",
-    component: () => import(/* webpackChunkName: "about" */ "../views/PenetrationTestingView.vue"),
+    component: PenetrationTestingView,
   },
   {
     path: "/vulnerability-scanning",
