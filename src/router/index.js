@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ServicesView from "../views/ServicesView.vue";
 import PenetrationTestingView from "../views/PenetrationTestingView.vue";
+import SmartContractDevelopmentView from "../views/SmartContractDevelopmentView.vue";
 
 Vue.use(VueRouter);
 
@@ -55,7 +56,7 @@ const routes = [
   {
     path: "/smart-contract-development",
     name: "SmartContractDevelopment",
-    component: () => import(/* webpackChunkName: "about" */ "../views/SmartContractDevelopmentView.vue"),
+    component: SmartContractDevelopmentView,
   },
   {
     path: "/blockchain-development",
