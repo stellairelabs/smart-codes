@@ -31,25 +31,7 @@
       </v-col>
     </v-row>
 
-    <v-row justify="center" class="mb-5">
-      <h1>Our Penetration Testing Process</h1>
-    </v-row>
-    <v-row class="pentest-process mb-15" >
-      <v-col xs="12" sm="6" md="4" lg="" v-for="(process, i) in pentestProcess" :key="i">
-        <v-row justify="center">
-          <v-col cols="6" align="center" align-self="center">
-            <v-avatar size="100"><v-img :src="process.image" /></v-avatar>
-            <h3>Step {{ i + 1 }}</h3>
-            <span>{{ process.name }}</span>
-          </v-col>
-          <v-col cols="6" align-self="start" class="pt-8" v-if="i != 4">
-            <v-img :src="arrow" width="100px" />
-          </v-col>
-          <v-col cols="6" align="center" v-if="i == 4">
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
+    <ProcessFlow title="Our Penetration Testing Process" :processFlow="process_flow" />
 
     <v-row align="center" justify="space-between">
       <v-col cols="5">
@@ -72,14 +54,14 @@
 
 <script>
 import dummy from "../assets/dummy.png";
-import arrow from "../assets/arrow.png";
+import ProcessFlow from "../components/ProcessFlow.vue";
 
 export default {
   name: "PenetrationTesting",
+  components: { ProcessFlow },
   data: () => ({
     dummy,
-    arrow,
-    pentestProcess: [
+    process_flow: [
       { name: "Share Source Code", image: dummy },
       { name: "Receive Quote", image: dummy },
       { name: "Begin Vulnerability Scanning", image: dummy },
@@ -91,7 +73,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pentest-process {
-  padding: 0 50px;
-}
 </style>
