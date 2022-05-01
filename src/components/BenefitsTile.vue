@@ -1,7 +1,7 @@
 <template>
   <v-container>
 
-    <v-row v-if="leftAligned" align="center" class="my-10 flex-wrap-reverse" justify="space-around">
+    <v-row v-if="leftAligned" align="center" class="my-10" justify="space-around">
       <v-col cols="5">
         <h1>{{ title }}</h1>
         <p>{{ description }}</p>
