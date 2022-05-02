@@ -1,61 +1,31 @@
 <template>
   <v-container>
+    <HeaderTile :title="header.title" :description="header.text" :image="header.img" />
 
-    <HeaderTile title="Decentralized Application (dApp) Development" :description="dummyText" :image="dummyImage" />
+    <InformationTile :title="row1.title" :description="row1.text" :image="row1.img" :leftAligned="false" />
 
-    <InformationTile 
-      title="What is a Decentralized Application (dApp)?" 
-      :description="dummyText" 
-      :image="dummyImage" 
-      :leftAligned="false" 
-    />
+    <ImageTileRow :title="row2.title" :description="row2.text" :image="row2.img" :data="row2.fourTileContainer" />
 
-    <BenefitsTile 
-      title="Benefits of a Decentralized Application (dApp)" 
-      :description="dummyText" 
-      :image="dummyImage" 
-      :leftAligned="false"
-      :data="[dummyTextShort, dummyTextShort, dummyTextShort, dummyTextShort]"
-    />
-
-    <InformationTile 
-      title="Why choose SMART CODES?" 
-      :description="dummyText" 
-      :image="dummyImage" 
-      :leftAligned="false" 
-    />
-
+    <InformationTile :title="row3.title" :description="row3.text" :image="row3.img" :leftAligned="false" />
   </v-container>
 </template>
 
-
 <script>
-import dummyImage from "../assets/dummy.png";
-import ProcessFlow from "../components/ProcessFlow.vue";
+import { header, row1, row2, row3 } from "../data/dAppDevelopment";
 import HeaderTile from "../components/HeaderTile.vue";
 import InformationTile from "../components/InformationTile.vue";
-import BenefitsTile from "../components/BenefitsTile.vue";
+import ImageTileRow from "../components/ImageTileRow.vue";
 
 export default {
   name: "DAppDevelopment",
-  components: { ProcessFlow, HeaderTile, InformationTile, BenefitsTile },
+  components: { HeaderTile, InformationTile, ImageTileRow },
   data: () => ({
-    dummyImage,
-    dummyText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad\
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut\
-          aliquip ex ea commodo consequat.",
-    dummyTextShort: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do",
-    process_flow: [
-      { name: "Share Source Code", image: dummyImage },
-      { name: "Receive Quote", image: dummyImage },
-      { name: "Begin Vulnerability Scanning", image: dummyImage },
-      { name: "Suggest Remediations", image: dummyImage },
-      { name: "Deliver Report", image: dummyImage },
-    ],
+    header,
+    row1,
+    row2,
+    row3,
   }),
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

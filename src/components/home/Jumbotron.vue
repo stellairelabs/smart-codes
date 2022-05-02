@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-img :src="jumbotron.img" aspect-ratio="3">
+    <v-img :src="jumbotron.img" aspect-ratio="3" class="image-content">
       <h1>{{ jumbotron.title1 }}<br />{{ jumbotron.title2 }}</h1>
       <p>{{ jumbotron.text }}</p></v-img
     >
@@ -17,4 +17,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.image-content {
+  align-items: center;
+  padding: 50px;
+}
+</style>

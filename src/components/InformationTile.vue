@@ -1,30 +1,18 @@
 <template>
-  <v-container>
-      <v-row v-if="leftAligned" align="center" class="mb-15" justify="space-between">
-        <v-col cols="5">
-          <h1>{{ title }}</h1>
-          <p>{{ description }}</p>
-        </v-col>
-        <v-col cols="6">
-          <v-img :src="image" alt="" max-width="550px" />
-        </v-col>
-      </v-row>
-
-      <v-row v-if="!leftAligned" align="center" class="mb-15" justify="space-between">
-        <v-col cols="6">
-          <v-img :src="image" alt="" max-width="550px" />
-        </v-col>
-        <v-col cols="5">
-          <h1>{{ title }}</h1>
-          <p>{{ description }}</p>
-        </v-col>
-      </v-row>
-  </v-container>
+  <v-row class="information-row">
+    <v-col v-if="leftAligned" class="information-container">
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+    </v-col>
+    <v-col><v-img :src="image" /></v-col>
+    <v-col v-if="!leftAligned" class="information-container">
+      <h1>{{ title }}</h1>
+      <p>{{ description }}</p>
+    </v-col>
+  </v-row>
 </template>
 
-
 <script>
-
 export default {
   name: "InformationTile",
   props: {
@@ -34,14 +22,19 @@ export default {
     leftAligned: {
       type: Boolean,
       default: true,
-    }
+    },
   },
-  data: () => ({
-  }),
+  data: () => ({}),
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.information-container {
+  align-self: center;
+}
+@media (min-width: 960px) {
+  .information-row {
+    padding: 50px;
+  }
+}
 </style>
-
-
