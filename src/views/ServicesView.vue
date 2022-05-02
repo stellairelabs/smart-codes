@@ -1,84 +1,84 @@
 <template>
-  <v-container>
-    <v-layout align-center column pa-15>
-      <h1>Our Services</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
-      <v-btn to="/request-a-quote" text outlined>Request A Quote</v-btn>
-    </v-layout>
+  <v-container fluid>
+    <v-row>
+      <v-img :src="jumbotron.img" class="jumbotron">
+        <h1 class="jumbotron__title">{{ jumbotron.title }}</h1>
+        <p class="jumbotron__text">{{ jumbotron.text }}</p>
+        <v-btn class="jumbotron__btn" to="/request-a-quote" outlined x-large>Request A Quote</v-btn></v-img
+      >
+    </v-row>
 
-    <v-layout>
-      <v-col class="our-services">
-        <v-row class="d-flex align-center align-self-start" v-for="(category, i) in services" :key="i">
-          <h3 class="category">{{ category.category }}</h3>
-          <div class="box" v-for="(service, j) in category.services" :key="j">
-            <h4 id="title">{{ service.title }}</h4>
-            <p>{{ service.text }}</p>
-            <v-btn to="/request-a-quote" text outlined>Learn more</v-btn>
-          </div>
+    <v-row v-for="(serviceGroup, i) in services" :key="i" class="services">
+      <v-col cols="12" md="2" class="services__category">
+        <h2>{{ serviceGroup.category }}</h2>
+      </v-col>
+      <v-col>
+        <v-row>
+          <v-col cols="12" sm="6" md="3" v-for="(service, i) in serviceGroup.services" :key="i">
+            <v-card class="services__service-card">
+              <v-card-title class="services__service-card__title">{{ service.title }}</v-card-title>
+              <v-card-text class="services__service-card__text">
+                {{ service.text }}
+              </v-card-text>
+              <v-card-text>
+                <v-btn :to="service.path" outlined>Learn more</v-btn>
+              </v-card-text>
+            </v-card>
+          </v-col>
         </v-row>
       </v-col>
-    </v-layout>
+    </v-row>
   </v-container>
 </template>
 
-
 <script>
-import services from "../data/services.json";
+import { jumbotron, services } from "../data/services.js";
 export default {
   name: "Services",
   data: () => ({
+    jumbotron,
     services,
   }),
 };
 </script>
 
-
-<style lang="scss" scoped>
-.our-services {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+<style scoped>
+.jumbotron {
   align-items: center;
+  text-align: center;
+  max-height: 600px;
+}
 
-  .category {
-    text-decoration: underline;
-    width: 120px;
-  }
-  .box {
-    width: 260px;
-    height: 260px;
-    border: 1px solid black;
-    padding: 20px;
-    margin: 20px 10px;
-    // margin-left: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    
+.services {
+  padding: 30px 50px;
+  align-items: center;
+}
 
-    p {
-      text-overflow: clip;
-      word-wrap: break-word;
-      overflow: hidden;
-      max-height: 9.1em; // 5 lines of text
-      line-height: 1.3em;
-    }
+.services__category {
+  text-align: center;
+  text-decoration: underline;
+}
 
-    #title {
-      max-width: 250px;
-      background-color: white;
-      text-align: center;
-      position: absolute;
-      align-self: center;
-      word-wrap: break-word;
-      transform: translate(0, -135%);
-    }
-  }
+.services__service-card {
+  border: 1px solid black;
+  height: 100%;
+  position: relative;
+}
+
+.services__service-card__title {
+  font-size: 1.3em;
+  background-color: white;
+  text-align: left;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  word-break: unset;
+  padding: 5px;
+}
+
+.services__service-card__text {
+  padding-top: 50px;
+  text-align: justify;
+  color: black !important;
 }
 </style>
