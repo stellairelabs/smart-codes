@@ -3,15 +3,8 @@
     <Jumbotron />
 
     <!-- Benifits of smart contracts -->
-    <v-row>
-      <v-col>
-        <v-img src="https://picsum.photos/id/11/500/300">
-          <h2>Benefits of a Smart Contract</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat null</p></v-img
-        >
-      </v-col>
-      <v-col><FourTileContainer :data="fourTileContainer" /> </v-col>
-    </v-row>
+    <ImageTileRow :title="row1.title" :description="row1.text" :image="row1.img" :data="row1.fourTileContainer" leftAligned="false" />
+
     <OurServices />
     <Feedback />
   </v-container>
@@ -21,14 +14,14 @@
 import OurServices from "../components/home/OurServices.vue";
 import Feedback from "../components/home/Feedback.vue";
 import Jumbotron from "../components/home/Jumbotron.vue";
-import FourTileContainer from "../components/FourTileContainer.vue";
+import ImageTileRow from "../components/ImageTileRow.vue";
 
-import { fourTileContainer } from "../data/home";
+import { row1 } from "../data/home";
 
 export default {
   name: "Home",
 
-  components: { OurServices, Feedback, Jumbotron, FourTileContainer },
-  data: () => ({ fourTileContainer }),
+  components: { OurServices, Feedback, Jumbotron, ImageTileRow },
+  data: () => ({ row1 }),
 };
 </script>
